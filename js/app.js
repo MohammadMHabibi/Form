@@ -1,29 +1,44 @@
 let userform = document.querySelector("form");
+let firstname = document.querySelector(".aval");
+let lastname = document.querySelector(".dovom");
+let fathername = document.querySelector(".sevom");
+let age = document.querySelector(".chaharom");
+firstname.addEventListener("blur",(e)=>{
+  console.log(e.target.value)
+})
+lastname.addEventListener("blur",(e)=>{
+  console.log(e.target.value)
+})
+fathername.addEventListener("blur",(e)=>{
+  console.log(e.target.value)
+})
+age.addEventListener("blur",(e)=>{
+  console.log(e.target.value)
+})
 userform.addEventListener("submit", (e) => {
-  console.log("your first name is : "+e.target.firstname.value);
+  console.log(
+    "Your first name is : " + e.target.firstname.value,
+    "Your last name is : " + e.target.lastname.value,
+    "Your father name is : " + e.target.fathername.value,
+    "Your number name is : " + e.target.age.value,
+    "Your national name is : " + e.target.national.value
+  );
   e.preventDefault();
 });
-let userform2 = document.querySelector("form");
-userform2.addEventListener("submit", (e) => {
-  console.log("your last name is : "+e.target.lastname.value);
-  e.preventDefault();
-});
-let userform3 = document.querySelector("form");
-userform3.addEventListener("submit", (e) => {
-  console.log("your father name is : "+e.target.fathername.value);
-  e.preventDefault();
-});
-let userform4 = document.querySelector("form");
-userform4.addEventListener("submit", (e) => {
-  console.log("your number name is : "+e.target.number.value);
-  e.preventDefault();
-});
-let userform5 = document.querySelector("form");
-userform5.addEventListener("submit", (e) => {
-  console.log("your national code is : "+e.target.national.value);
-  e.preventDefault();
-});
-let userform6 = document.querySelector("form");
-userform6.addEventListener("submit", (e) => {
-  alert("Your information has been registered.")
-});
+if (Number(age.value) <= 0) {
+  alert("your number is Not Define");
+} if (
+  firstname.value === "" ||
+  lastname.value === "" ||
+  fathername.value === ""
+) {
+  alert("pleas complete all questions.");
+} if (
+  firstname === value.length < 3 ||
+  lastname === value.length < 3 ||
+  fathername === value.length < 3
+) {
+  alert("You cannot enter a name with fewer than 3 letters.");
+} else {
+  alert("Everything is great, thank you for your support.😘");
+}
